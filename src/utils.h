@@ -7,9 +7,11 @@
 
 #ifndef UTILS_H_
 #define UTILS_H_
-#include<stdio.h>
 #define MAX 50
-
-
+struct P
+{
+    int x, y;
+};
+typedef struct P Point;
 
 #endif /* UTILS_H_ */

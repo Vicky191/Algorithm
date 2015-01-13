@@ -1,3 +1,4 @@
+#include"utils.h"
 
 int closest_pair_1d(int *p,int low,int high)
 {
@@ -15,5 +16,13 @@ int closest_pair_1d(int *p,int low,int high)
 	return d;
 
 
+
+}
+
+int closest_pair_2d(Point *p,int low,int high)
+{
+
+
+	return 0;
 
 }
