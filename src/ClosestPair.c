@@ -28,22 +28,33 @@ int closest_pair_1d(int *p,int low,int high)
 
 
 }
-int closestUtil(Point Px[], Py[], n);
+float bruteForce(Point P[],n)
+{
+	 float min = 0;
+	    for (int i = 0; i < n; ++i)
+	        for (int j = i+1; j < n; ++j)
+	            if (dist(P[i], P[j]) < min)
+	                min = dist(P[i], P[j]);
+	    return min;
+
+}
+int closestUtil(Point P[], n)
+{
+	if(n <=3)
+		return bruteForce(P,n);
+	int mid = n/2;
+	    Point midPoint = P[mid];
+	    float dl= closestUtil(P,mid);
+	    float dr= closestUtil(P+mid,n-mid);
+
+return 0;
+}
 int closest_pair_2d(Point *P,int n)
 {
-    Point Px[n];
-    Point Py[n];
-    for (int i = 0; i < n; i++)
-    {
-        Px[i] = P[i];
-        Py[i] = P[i];
-    }
-
-    qsort(Px, n, sizeof(Point), compareX);
-    qsort(Py, n, sizeof(Point), compareY);
+    qsort(P, n, sizeof(Point), compareX);
 
     // Use recursive function closestUtil() to find the smallest distance
-    return closestUtil(Px, Py, n);
+    return closestUtil(P, n);
 	return 0;
 
 }
