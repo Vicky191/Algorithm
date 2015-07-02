@@ -28,18 +28,35 @@ int closest_pair_1d(int *p,int low,int high)
 
 
 }
-float bruteForce(Point P[],n)
+
+float bruteForce(Point P[],int n)
 {
-	 float min = 0;
-	    for (int i = 0; i < n; ++i)
-	        for (int j = i+1; j < n; ++j)
-	            if (dist(P[i], P[j]) < min)
-	                min = dist(P[i], P[j]);
+	int i,j,min;
+	    for(i = 0; i < n; ++i)
+	    {
+	        for(j = i+1; j < n; ++j)
+	        {
+/*	        	if (dist(P[i], P[j]) < min)
+	                min = dist(P[i], P[j]);*/
+	        }
+	    }
 	    return min;
 
 }
-int closestUtil(Point P[], n)
+int closestSplitUtil(Point P[],int n)
 {
+	int min=0;
+	if(n <=3)
+		return bruteForce(P,n);
+	int mid = n/2;
+	    Point midPoint = P[mid];
+	    float dl= closestUtil(P,mid);
+	    float dr= closestUtil(P+mid,n-mid);
+return 0;
+}
+int closestUtil(Point P[],int n)
+{
+	int min=0;
 	if(n <=3)
 		return bruteForce(P,n);
 	int mid = n/2;
@@ -50,11 +67,12 @@ int closestUtil(Point P[], n)
 return 0;
 }
 int closest_pair_2d(Point *P,int n)
-{
+{	int dmin;
     qsort(P, n, sizeof(Point), compareX);
 
     // Use recursive function closestUtil() to find the smallest distance
-    return closestUtil(P, n);
+    dmin = closestUtil(P, n);
+    printf("Min distance is %d",dmin);
 	return 0;
 
 }
