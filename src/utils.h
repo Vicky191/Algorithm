@@ -13,5 +13,11 @@ struct P
     int x, y;
 };
 typedef struct P Point;
+struct TreeNode{
+	int data;
+	struct TreeNode *left;
+	struct TreeNode *right;
+};
+typedef struct TreeNode node;
 
 #endif /* UTILS_H_ */

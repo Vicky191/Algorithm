@@ -7,22 +7,22 @@ int main(){
     printf("N: %d", n);
     dmin=closest_pair_2d(P,n);
     printf("N: %d", dmin);*/
-	init();
-	insert(2);
-	insert(1);
-	insert(5);
-	insert(12);
-	insert(81);
-	insert(6);
-	insert(9);
-	insert(4);
-	insert(41);
-	insert(54);
-	insert(14);
-	insert(576);
-	display();
-	printf("Min is :%d \n", extractMin());
-	display();
+	node *root;
+	int i;
+	root = NULL;
+	insertNode(&root,21);
+	insertNode(&root,578);
+	insertNode(&root,1);
+	insertNode(&root,2);
+	insertNode(&root,2341);
+	insertNode(&root,2145);
+	insertNode(&root,2123);
+	insertNode(&root,210);
+	insertNode(&root,12);
+	insertNode(&root,18);
+	insertNode(&root,16);
+	mirrorTree(root);
+	printout(root);
     setbuf(stdout, NULL);
    return 0;
 }
