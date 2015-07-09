@@ -19,5 +19,11 @@ struct TreeNode{
 	struct TreeNode *right;
 };
 typedef struct TreeNode node;
+struct CircularDoublyList{
+	int data;
+	struct CircularDoublyList *prev;
+	struct CircularDoublyList *next;
+};
+typedef struct CircularDoublyList cdlNode;
 
 #endif /* UTILS_H_ */

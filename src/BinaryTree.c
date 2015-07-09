@@ -12,6 +12,7 @@ node *newNode(int data)
 	temp->data=data;
 	temp->left=NULL;
 	temp->right=NULL;
+	return temp;
 }
 void insertNode(node **tree,int data)
 {
@@ -34,6 +35,60 @@ void printout(node *tree){
 	printout(tree->left);
 	printf("\n%d \n",tree->data);
 	printout(tree->right);
+}
+void printlist(cdlNode *head)
+{
+	cdlNode *temp = head;
+	int i=1;
+	for(i=0;i<=20;i++){
+		printf("%d->",temp->data);
+		temp=temp->next;
+
+	}
+}
+
+
+
+cdlNode *treeToList(node *tree){
+	if(tree==NULL)
+		return NULL;
+	cdlNode *head;
+	head = NULL;
+	treeToList_1(tree,&head);
+//	printlist(head);
+	printf("Adress : %p",head);
+	return head;
+
+
+}
+
+void test(node *root)
+{
+	cdlNode *listHead;
+	listHead = treeToList(root);
+	printlist(listHead);
+}
+void treeToList_1(node *tree, cdlNode **list){
+
+	if(tree==NULL)
+		return;
+	treeToList_1(tree->left,list);
+	if(*list==NULL){
+			*list =(cdlNode *)malloc(sizeof(cdlNode));
+			(*list)->data=tree->data;
+			(*list)->next=*list;
+			(*list)->prev=*list;
+	}
+	else
+	{
+		cdlNode *temp=(cdlNode *)malloc(sizeof(cdlNode));
+		temp->data=tree->data;
+		temp->next=(*list);
+		temp->prev=((*list)->prev);
+		(temp->prev)->next=temp;
+		(*list)->prev=temp;
+	}
+	treeToList_1(tree->right,list);
 }
 
 void printoutPreOrder(node *tree){
