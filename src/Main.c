@@ -21,9 +21,10 @@ int main(){
 	insertNode(&root,12);
 	insertNode(&root,18);
 	insertNode(&root,16);
+	printoutbfsTree(root);
 //	mirrorTree(root);
 //	printout(root);
-	test(root);
+//	test(root);
 //	cdlNode *test = treeToList(root);
 	/*listHead = */
 //			printf("address %p %p", test,test +1);

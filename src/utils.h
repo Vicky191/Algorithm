@@ -25,5 +25,15 @@ struct CircularDoublyList{
 	struct CircularDoublyList *next;
 };
 typedef struct CircularDoublyList cdlNode;
+struct Qnode{
+	node *treeNode;
+	struct 	Qnode *next;
+};
+struct Queue
+{
+	struct Qnode *front;
+	struct Qnode *rear;
+};
+typedef struct Queue queue;
 
 #endif /* UTILS_H_ */
