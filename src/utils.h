@@ -35,5 +35,11 @@ struct Queue
 	struct Qnode *rear;
 };
 typedef struct Queue queue;
+struct Snode{
+	node *treeNode;
+	struct Snode *next;
+};
+typedef struct Snode stackNode;
+
 
 #endif /* UTILS_H_ */

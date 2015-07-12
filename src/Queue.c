@@ -23,6 +23,8 @@ struct Qnode *newQNode(node *root)
 }
 void enqueue(queue *q,node *root)
 {
+	if(root == NULL)
+			return;
 	struct Qnode *temp = (struct Qnode *)newQNode(root);
 	if(q->rear == NULL)
 	{
@@ -33,7 +35,7 @@ void enqueue(queue *q,node *root)
 	q->rear = temp;
 
 }
-struct Qnode *dequeue(queue *q)
+node *dequeue(queue *q)
 {
 	if(q->front == NULL)
 		return NULL;
@@ -41,19 +43,22 @@ struct Qnode *dequeue(queue *q)
 	q->front = q->front->next;
 	if(q->front ==NULL)
 		q->rear = NULL;
-	return temp;
+	node *tempNode = temp->treeNode;
+	free(temp);
+	return tempNode;
 }
 void printoutbfsTree(node *root)
 {
 	queue *q = createQueue();
+	if(q==NULL)
+		return;
 	enqueue(q,root);
-	struct Qnode *tempnode;
-	while((tempnode = (struct Qnode*)dequeue(q))!=NULL)
+	node *tempnode;
+	while((tempnode = (node *)dequeue(q))!=NULL)
 	{
-
-		printf("%d->",tempnode->treeNode->data);
-		enqueue(q,tempnode->treeNode->left);
-		enqueue(q,tempnode->treeNode->right);
+		printf("%d->",tempnode->data);
+		enqueue(q,tempnode->left);
+		enqueue(q,tempnode->right);
 	}
-
+	free(q);
 }

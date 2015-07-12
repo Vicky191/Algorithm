@@ -33,7 +33,7 @@ void printout(node *tree){
 	if(tree==NULL)
 		return;
 	printout(tree->left);
-	printf("\n%d \n",tree->data);
+	printf("%d->",tree->data);
 	printout(tree->right);
 }
 void printlist(cdlNode *head)

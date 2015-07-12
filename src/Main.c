@@ -21,7 +21,8 @@ int main(){
 	insertNode(&root,12);
 	insertNode(&root,18);
 	insertNode(&root,16);
-	printoutbfsTree(root);
+//	printoutbfsTree(root);
+	printoutspinaltraversal(root);
 //	mirrorTree(root);
 //	printout(root);
 //	test(root);
