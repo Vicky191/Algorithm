@@ -40,6 +40,19 @@ struct Snode{
 	struct Snode *next;
 };
 typedef struct Snode stackNode;
+#include "stdbool.h"
+void insertNode(node **tree,int data);
+void printout(node *tree);
+void printlist(cdlNode *head);
+cdlNode *treeToList(node *tree);
+void printoutPreOrder(node *tree);
+void printoutPostOrder(node *tree);
+void mirrorTree(node *tree);
+void deleteTree(node *tree);
+int identicalTrees(node* a, node* b);
+bool isBST(node *node, int *size,int min, int maxi);
+int largestBST(node *root);
+int max(int,int);
 
 
 #endif /* UTILS_H_ */

@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include"utils.h"
+#include"BinaryTree.h"
 int main(){
 	/* 	int n, dmin;
     Point P[]={{0,0}, {-2,0}, {4,0}, {1,1}, {3,3}, {-2,2}, {5,2}};
@@ -21,10 +22,11 @@ int main(){
 	insertNode(&root,12);
 	insertNode(&root,18);
 	insertNode(&root,16);
-//	printoutbfsTree(root);
-	printoutspinaltraversal(root);
+	printf("Largest BST size %d",largestBST(root));
+	//	printoutbfsTree(root);
+//	printoutspinaltraversal(root);
 //	mirrorTree(root);
-//	printout(root);
+	printout(root);
 //	test(root);
 //	cdlNode *test = treeToList(root);
 	/*listHead = */
